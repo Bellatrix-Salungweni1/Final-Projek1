@@ -184,6 +184,168 @@ body {
     float: right;
 }
 
+#about {
+    display:contents;
+    align-items: center;
+    padding: 3rem 2rem 0rem 4rem;
+}
+#about_content {
+    background:orange;
+}
+#about_content h4.about_title {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 800;
+}
+#about_content .about_text {
+    text-align: center;
+    font-weight: 400;
+}
+#about_content .container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: auto;
+  margin-block: 2rem;
+  gap: 2rem;
+  padding-bottom: 4%;
+}
+#about_content .card {
+  display: flex;
+  flex-direction: column;
+  width: clamp(20rem, calc(20rem + 2vw), 22rem);
+  overflow: hidden;
+  box-shadow: 0 .1rem 1rem rgba(0, 0, 0, 0.8);
+  border-radius: 1rem;
+  background: #ECE9E6;
+  background: linear-gradient(to right, #FFFFFF, #ECE9E6);
+}
+#about_content .card_header {
+    padding: 1rem;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+#about_content .card_body {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+}
+#about_content .card_body h4 {
+    font-size: large;
+    font-weight: 800;
+    text-transform: capitalize;
+}
+#contactUs {
+    background-color: var(--secondary-color);
+    margin:0 auto 0 auto;
+}
+
+
+#contactUs {
+  position: relative;
+  padding: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 0rem;
+}
+
+.form {
+  width: 100%;
+  max-width: 1000px;
+  background-color: #FAF7F0;
+  border-radius: 5px;
+  box-shadow: 0 0 20px 1px rgba(243, 240, 240, 0.364);
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.contact-form {
+  background-color: #231955;
+  position: relative;
+}
+
+form {
+  padding: 2rem 2rem;
+  z-index: 10;
+}
+
+.title-contactUs {
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.input-container {
+  margin: 1rem;
+}
+
+.input {
+  width: 100%;
+  border: 1px solid #fff;
+  background: none;
+  padding: 1rem 1rem;
+  color: #fff;
+}
+
+textarea.input {
+  min-height: 100px;
+}
+
+::placeholder {
+  color: white;
+}
+
+
+.contact-info {
+  padding: 2rem 2rem;
+  position: relative;
+}
+
+
+.information {
+  display: flex;
+  align-items: center;
+}
+
+.icon {
+  width: 30px;
+  margin-right: 1rem;
+}
+
+#social-media {
+  padding: 2rem;
+}
+
+#social-media p {
+  color: var(--secondary-color);
+}
+
+.social-icons {
+  margin-left: 7rem;
+  display: flex;
+  margin-top: 1rem;
+}
+
+.social-icons a {
+  width: 30px;
+  height: 30px;
+  border-radius: 5px;
+  background: linear-gradient(45deg, #E8AA42, #c49037);
+  line-height: 30px;
+  margin-right: 0.5rem;
+}
+
+.social-icons a:hover {
+  transform: scale(1.05);
+}
+
+
 
 
 @media screen and (max-width: 576px) {
@@ -269,59 +431,4 @@ body {
 }
 
 
-/* About Us */
-#about {
-    display:contents;
-    align-items: center;
-    padding: 3rem 2rem 3rem 4rem;
-}
-#about_content {
-    background:orange;
-}
-#about_content h4.about_title {
-    text-align: center;
-    font-size: 2.5rem;
-    font-weight: 800;
-}
-#about_content .about_text {
-    text-align: center;
-    font-weight: 400;
-}
-#about_content .container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  max-width: auto;
-  margin-block: 2rem;
-  gap: 2rem;
-  padding-bottom: 4%;
-}
-#about_content .card {
-  display: flex;
-  flex-direction: column;
-  width: clamp(20rem, calc(20rem + 2vw), 22rem);
-  overflow: hidden;
-  box-shadow: 0 .1rem 1rem rgba(0, 0, 0, 0.8);
-  border-radius: 1rem;
-  background: #ECE9E6;
-  background: linear-gradient(to right, #FFFFFF, #ECE9E6);
-}
-#about_content .card_header {
-    padding: 1rem;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: auto;
-    margin-bottom: auto;
-}
-#about_content .card_body {
-  padding: 2rem;
-  display: flex;
-  flex-direction: column;
-  gap: .5rem;
-}
-#about_content .card_body h4 {
-    font-size: large;
-    font-weight: 800;
-    text-transform: capitalize;
-  }
+
