@@ -267,3 +267,61 @@ body {
         padding: .2rem;
     }
 }
+
+
+/* About Us */
+#about {
+    display:contents;
+    align-items: center;
+    padding: 3rem 2rem 3rem 4rem;
+}
+#about_content {
+    background:orange;
+}
+#about_content h4.about_title {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 800;
+}
+#about_content .about_text {
+    text-align: center;
+    font-weight: 400;
+}
+#about_content .container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: auto;
+  margin-block: 2rem;
+  gap: 2rem;
+  padding-bottom: 4%;
+}
+#about_content .card {
+  display: flex;
+  flex-direction: column;
+  width: clamp(20rem, calc(20rem + 2vw), 22rem);
+  overflow: hidden;
+  box-shadow: 0 .1rem 1rem rgba(0, 0, 0, 0.8);
+  border-radius: 1rem;
+  background: #ECE9E6;
+  background: linear-gradient(to right, #FFFFFF, #ECE9E6);
+}
+#about_content .card_header {
+    padding: 1rem;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+#about_content .card_body {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+}
+#about_content .card_body h4 {
+    font-size: large;
+    font-weight: 800;
+    text-transform: capitalize;
+  }
