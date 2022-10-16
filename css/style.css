@@ -132,6 +132,83 @@ body {
 #home_hero img {
     width: 700px;
 }
+#to_do {
+    position: fixed;
+    z-index: 999;
+    left: 50%;
+    top: -100%;
+    transform: translate(-50%, -50%);
+    background-color: rgb(255, 255, 255);
+    padding: 1rem 1.3rem 1rem;
+    border-radius: 5px;
+    transition: .5s;
+    min-width: 30%;
+}
+#to_do.active {
+    top: 50%;
+}
+#to_do_form {
+    margin-bottom: .5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#to_do_form input{
+    padding: .3rem .5rem;
+    margin-right: .5rem;
+    outline: none;
+    border: 1px solid var(--text-secondary);
+    border-radius: 3px;
+    width: 100%;
+}
+#to_do_form button {
+    padding: .4rem 1rem;
+    background: var(--main-color);
+    outline: none;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 5px; 
+}
+li.to_do_item {
+    border: 1px solid var(--text-secondary);
+    border-radius: 3px;
+    padding: .5rem .5rem;
+    margin: .3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+li.to_do_item label {
+    display: flex;
+}
+li.to_do_item label input {
+    margin-right: .3rem;
+}
+li.to_do_item label p.checked {
+    text-decoration: line-through;
+}
+li.to_do_item button {
+    outline: none;
+    border: none;
+    font-size: 1rem;
+    margin-right: .4rem;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+button#to_do_btn_close {
+    width: 100%;
+    margin-top: .7rem;
+    padding: .6rem 1rem;
+    background: var(--main-color);
+    outline: none;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
 
 
 #pop_up_bg {
