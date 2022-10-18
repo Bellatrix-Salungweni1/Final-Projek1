@@ -63,10 +63,10 @@ body {
     scroll-behavior: smooth;
 }
 #my_nav_menu li a:hover{
-    color: var(--main-color);
+    color: var(--third-color);
     font-weight: 600;
 }
-#my_nav_menu li a.active{
+#my_nav_menu li a.active a:hover{
     color: var(--main-color);
     font-weight: 600;
 }

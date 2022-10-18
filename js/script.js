@@ -33,7 +33,14 @@ to_do_btn.addEventListener('click', function(e) {
     if(to_do_input.value != '') {
         addToDoList(to_do_input.value)
     } else {
-        alert('Fild Must Required');
+        Swal.fire({
+            title: 'Warning',
+            text: "Tidak boleh kosong!!!",
+            icon: 'warning',
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Ok'
+          });
     }
 })
 to_do_list.addEventListener('click', function(e) {
