@@ -1,10 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700;800&family=Poppins:wght@200;300;400;500;600;700;800&display=swap');
 :root {
-    --main-color : #1e40af; 
-    --secondary-color : #0284c7; 
-    --text-primary : #0f172a; 
-    --text-secondary : #475569;
+    --main-color : white; 
+    --secondary-color : #231955;
+    --third-color : #E8AA42; 
+    --text-primary : #11275e; 
+    --text-secondary : #383839;
+    --popUp-table: rgb(243, 240, 236);
 }
+
 * {
     padding: 0;
     margin: 0;
@@ -26,7 +29,9 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: .5rem 4rem;
-}
+    background-color: var(--text-secondary);
+    height: 75px; }
+
 #my_nav_logo {
     display: flex;
     align-items: center;
@@ -40,6 +45,7 @@ body {
     font-size: 1.6rem;
     font-family: 'Nunito';
     font-weight: 800;
+    color: var(--main-color);
 }
 #my_nav_menu {
     display: flex;
@@ -53,7 +59,8 @@ body {
     position: relative;
     padding-bottom: .3rem;
     transition: .5s;
-    color: var(--text-secondary);
+    color: var(--main-color);
+    scroll-behavior: smooth;
 }
 #my_nav_menu li a:hover{
     color: var(--main-color);
@@ -79,11 +86,14 @@ body {
 }
 
 
+
 #home {
+    margin-top: 30px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 3rem 2rem 3rem 4rem;
+    padding-top: 10rem;
 }
 #home_content h4.text_secondary {
     font-size: 1.5rem;
@@ -108,6 +118,7 @@ body {
     margin-bottom: 0;
     padding-bottom: 0;
     line-height: 2.5rem;
+    color: var(--third-color);
 }
 #home_content p.text-desc {
     margin-top: .8rem;
@@ -117,9 +128,10 @@ body {
 #home_content button#btn_content {
     margin-top: 1rem;
     padding: .8rem 3rem;
-    background: var(--secondary-color);
+    background: var(--text-primary);
     outline: none;
     border: none;
+    border-radius: 5px;
     font-size: .9rem;
     color: #fff;
     cursor: pointer;
@@ -127,7 +139,7 @@ body {
     transition: .5s;
 }
 #home_content button#btn_content:hover {
-    background-color: var(--main-color);
+    background-color: #0a3496;
 }
 #home_hero img {
     width: 700px;
@@ -138,11 +150,12 @@ body {
     left: 50%;
     top: -100%;
     transform: translate(-50%, -50%);
-    background-color: rgb(255, 255, 255);
+    background-color: var(--main-color);
     padding: 1rem 1.3rem 1rem;
     border-radius: 5px;
     transition: .5s;
     min-width: 30%;
+    border: 0.5px solid #2e2849;
 }
 #to_do.active {
     top: 50%;
@@ -163,10 +176,10 @@ body {
 }
 #to_do_form button {
     padding: .4rem 1rem;
-    background: var(--main-color);
+    background: var(--secondary-color);
     outline: none;
     border: none;
-    color: #fff;
+    color: var(--main-color);
     cursor: pointer;
     border-radius: 5px; 
 }
@@ -201,22 +214,21 @@ button#to_do_btn_close {
     width: 100%;
     margin-top: .7rem;
     padding: .6rem 1rem;
-    background: var(--main-color);
+    background: var(--secondary-color);
     outline: none;
     border: none;
-    color: #fff;
+    color: var(--main-color);
     cursor: pointer;
     border-radius: 5px;
 }
 
 
-
 #pop_up_bg {
     position: fixed;
     z-index: 998;
+    backdrop-filter: blur(10px);
     width: 0;
     height: 0;
-    background-color: rgba(0, 0, 0, 1);
 }
 #pop_up_bg.active {
     width: 100%;
@@ -232,13 +244,21 @@ button#to_do_btn_close {
     left: 50%;
     top: -100%;
     transform: translate(-50%, -50%);
-    background-color: #fff;
+    background-color: var(--main-color);
     padding: 2rem 2.5rem 1rem;
     border-radius: 5px;
     transition: .5s;
+    border: 0.5px solid #2e2849;
 }
 #pop_up.active {
     top: 50%;
+}
+#pop_up table {
+  border-collapse: collapse;
+}
+
+th, td {
+  border: 1px solid black;
 }
 #pop_up table thead tr th {
     padding: .5rem 1rem;
@@ -252,14 +272,16 @@ button#to_do_btn_close {
 #pop_up button#btn_pop_up_close {
     margin-top: 1rem;
     padding: .6rem 1rem;
-    background: var(--main-color);
+    background: var(--secondary-color);
     outline: none;
     border: none;
-    color: #fff;
+    color: var(--third-color); 
     cursor: pointer;
     border-radius: 5px;
     float: right;
 }
+
+
 
 #slider,
 .wrap,
@@ -270,13 +292,16 @@ button#to_do_btn_close {
   width: 100%;
   height: auto;
   overflow-x: hidden;
-  background-color:#0f172a;
+  background-color: var(--text-primary);
 }
 #slider h1 {
+    padding-top: 1.5rem;
     text-align: center;
     font-size: 2.5rem;
+    font-family: 'Poppins';
     font-weight: 800;
     padding-bottom: 50px;
+    color: var(--main-color);
 }
 .wrap {
   position: relative;
@@ -296,22 +321,24 @@ button#to_do_btn_close {
 .slide-content a:link, a:visited {
     display: inline;
     background-color: lightseagreen;
-    color: white;
+    color: var(--main-color);
     padding: 14px 40px;
     text-align: center;
     text-decoration:solid;
     display: inline-block;
-    margin-top: 10px;
-    margin-bottom: 80px;
+    margin-top: 30px;
+    margin-bottom: 50px;
     width: auto;
     height: auto;
+    border-radius: 5px;
+
   }
-  a:hover, a:active {
-    background-color: seagreen;
+ .slide-content a:hover, a:active {
+    background-color: var(--third-color);
   }
 .slide-content img {
     display:inline;
-    width: 80%;
+    width: 70%;
     height:auto;
     border-radius: 20px;
 }
@@ -322,7 +349,7 @@ button#to_do_btn_close {
 }
 .slide-content span {
   font-size: 5rem;
-  color: #fff;
+  color: var(--main-color);
 }
 .arrow {
   cursor: pointer;
@@ -335,13 +362,13 @@ button#to_do_btn_close {
 }
 #arrow-left {
   border-width: 30px 40px 30px 0;
-  border-color: transparent lightseagreen transparent transparent;
+  border-color: transparent var(--third-color) transparent transparent;
   left: 0;
   margin-left: 30px;
 }
 #arrow-right {
   border-width: 30px 0 30px 40px;
-  border-color: transparent transparent transparent lightseagreen;
+  border-color: transparent transparent transparent var(--third-color);
   right: 0;
   margin-right: 30px;
 }
@@ -349,19 +376,22 @@ button#to_do_btn_close {
 #about {
     display:contents;
     align-items: center;
-    padding: 3rem 2rem 0rem 4rem;
 }
 #about_content {
-    background:orange;
+    background: var(--text-secondary);
 }
 #about_content h4.about_title {
+    padding-top: 30px;
     text-align: center;
     font-size: 2.5rem;
     font-weight: 800;
+    color: var(--main-color);
 }
 #about_content .about_text {
     text-align: center;
     font-weight: 400;
+    color: var(--main-color);
+
 }
 #about_content .container {
   display: flex;
@@ -390,6 +420,9 @@ button#to_do_btn_close {
     margin-top: auto;
     margin-bottom: auto;
 }
+#about_content .card_image{
+    height: 100px;
+}
 #about_content .card_body {
   padding: 2rem;
   display: flex;
@@ -401,13 +434,44 @@ button#to_do_btn_close {
     font-weight: 800;
     text-transform: capitalize;
 }
-#contactUs {
-    background-color: var(--secondary-color);
-    margin:0 auto 0 auto;
+
+#blog h2{
+  text-align: center;
+  color: var(--secondary-color);
+  font-family: 'Poppins';
+}
+
+#blog .container {
+  display: flex;
+flex-wrap: wrap;
+justify-content: center;
+max-width: auto;
+margin-block: 2rem;
+gap: 2rem;
+padding-bottom: 4%;
+}
+#blog .card {
+  display: flex;
+flex-direction: column;
+width: clamp(20rem, calc(20rem + 2vw), 22rem);
+overflow: hidden;
+box-shadow: 0 .1rem 1rem rgba(0, 0, 0, 0.8);
+border-radius: 1em;
+background: #ECE9E6;
+background: linear-gradient(to right, #FFFFFF, #ECE9E6);
+}
+#blog .card_body{
+  padding: 2rem;
+display: flex;
+flex-direction: column;
+gap: .5rem;
 }
 
 
+
 #contactUs {
+  background-color: var(--secondary-color);
+  margin:0 auto 0 auto;
   position: relative;
   padding: 2rem;
   display: flex;
@@ -417,95 +481,120 @@ button#to_do_btn_close {
 }
 
 .form {
-  width: 100%;
-  max-width: 1000px;
-  background-color: #FAF7F0;
-  border-radius: 5px;
-  box-shadow: 0 0 20px 1px rgba(243, 240, 240, 0.364);
-  overflow: hidden;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-}
+    width: 100%;
+    max-width: 1000px;
+    background-color: #FAF7F0;
+    border-radius: 5px;
+    box-shadow: 0 0 20px 1px rgba(243, 240, 240, 0.364);
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
 
-.contact-form {
-  background-color: #231955;
-  position: relative;
-}
+  .form .info{
+    margin-top: 20px;
+  }
 
-form {
-  padding: 2rem 2rem;
-  z-index: 10;
-}
+  .contact-form {
+    background-color: #231955;
+    position: relative;
+  }
 
-.title-contactUs {
-  color: var(--text-primary);
-  margin-bottom: 1rem;
-  text-align: center;
-}
+  form {
+    padding: 2rem 2rem;
+    z-index: 10;
+  }
 
-.input-container {
-  margin: 1rem;
-}
+  .title-form {
+    color: var(--main-color);
+  }
+  .btn-form {
+    margin-top: 1rem;
+    padding: .6rem 1rem;
+    background: var(--main-color);
+    outline: none;
+    border: none;
+    color: var(--text-primary); 
+    cursor: pointer;
+    border-radius: 5px;
+    float: right;
+  }
+  .title-contactUs {
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+  
+  .input-container {
+    margin: 1rem;
+  }
+  
+  .input {
+    width: 100%;
+    border: 1px solid var(--main-color);
+    border-radius: 10px;
+    background: none;
+    padding: 1rem 1rem;
+    color: var(--main-color);
+  }
+  
+  .input-container textarea.input {
+    min-height: 100px;
+  }
 
-.input {
-  width: 100%;
-  border: 1px solid #fff;
-  background: none;
-  padding: 1rem 1rem;
-  color: #fff;
-}
+  ::placeholder {
+    color: var(--main-color);
+    font-size: medium;
+  }
+  
+  .contact-info {
+    padding: 2rem 2rem;
+    position: relative;
+  }
+  
+  
+  .information {
+    display: flex;
+    align-items: center;
+  }
+  
+  .icon {
+    width: 30px;
+    margin-right: 1rem;
+  }
+  
+  #social-media {
+    padding: 2rem;
+  }
 
-textarea.input {
-  min-height: 100px;
-}
+  #social-media .title {
+    padding-left: 7rem;
+  }
 
-::placeholder {
-  color: white;
-}
-
-
-.contact-info {
-  padding: 2rem 2rem;
-  position: relative;
-}
-
-
-.information {
-  display: flex;
-  align-items: center;
-}
-
-.icon {
-  width: 30px;
-  margin-right: 1rem;
-}
-
-#social-media {
-  padding: 2rem;
-}
-
-#social-media p {
-  color: var(--secondary-color);
-}
-
-.social-icons {
-  margin-left: 7rem;
-  display: flex;
-  margin-top: 1rem;
-}
-
-.social-icons a {
-  width: 30px;
-  height: 30px;
-  border-radius: 5px;
-  background: linear-gradient(45deg, #E8AA42, #c49037);
-  line-height: 30px;
-  margin-right: 0.5rem;
-}
-
-.social-icons a:hover {
-  transform: scale(1.05);
-}
+  #social-media p {
+    color: var(--secondary-color);
+  }
+  
+  .social-icons {
+    margin-left: 7rem;
+    display: flex;
+    margin-top: 1rem;
+  }
+  
+  .social-icons a {
+    width: 30px;
+    height: 30px;
+    border-radius: 5px;
+    background: linear-gradient(45deg, #E8AA42, #805b1b);
+    line-height: 30px;
+    margin-right: 0.5rem;
+    text-align: center;
+  }
+  
+  .social-icons a:hover {
+    transform: scale(1.05);
+  }
+  
 
 
 
@@ -546,7 +635,7 @@ textarea.input {
         padding-left: 2.5rem;
     }
     #my_nav_menu li a{
-        color: #fff;
+        color: var(--main-color);
     }
     #my_navbar #my_nav_toggle {
         display: block;
@@ -590,6 +679,78 @@ textarea.input {
     #pop_up table tbody tr td {
         padding: .2rem;
     }
+    #arrow-left {
+      border-width: 15px 20px 15px 0;
+      border-color: transparent var(--third-color) transparent transparent;
+      left: 0;
+      margin-left: 30px;
+    }
+    #arrow-right {
+      border-width: 15px 0 15px 20px;
+      border-color: transparent transparent transparent var(--third-color);
+      right: 0;
+      margin-right: 30px;
+    }
+    .form {
+    grid-template-columns: 1fr;
+  }
+  .container {
+    padding: 1.5rem;
+  }
+
+  .contact-info:before {
+      bottom: initial;
+      top: -75px;
+      right: 65px;
+      transform: scale(0.95);
+    display: none;
+  }
+  .contact-form:before {
+    top: -13px;
+    left: initial;
+    right: 70px;
+  }
+
+
+  form,
+  .contact-info {
+    padding: 1.7rem 1.6rem;
+  }
+
+  .text,
+  .information,
+  .social-media p {
+    font-size: 0.8rem;
+    margin: 1rem 0 1.5rem 0;
+
+  }
+
+  .title {
+    font-size: 1.15rem;
+  }
+
+  .social-media {
+    padding: 1.5rem 0 0 0;
+  }
+  
+  .social-icons a {
+    width: 3 0px;
+    height: 30px;
+    line-height: 30px;
+  }
+
+  .icon {
+    width: 20px;
+  }
+
+  .input {
+    padding: 0.5rem 1rem;
+  }
+
+  .btn {
+    padding: 0.5rem 1rem;
+  }
+
 }
 
 
