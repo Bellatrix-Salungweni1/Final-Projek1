@@ -4,7 +4,7 @@ const btn_content = document.querySelector("#btn_content");
 const pop_up_bg = document.querySelector("#pop_up_bg");
 const pop_up = document.querySelector("#pop_up");
 const btn_pop_up_close = document.querySelector("#btn_pop_up_close");
-
+const html = document.querySelector("html")
 
 nav_toggle.addEventListener('click', function() {
     nav_menu.classList.toggle('active')
@@ -13,10 +13,13 @@ nav_toggle.addEventListener('click', function() {
 btn_content.addEventListener('click', function() {
     pop_up_bg.classList.add('active');
     pop_up.classList.add('active');
+    html.classList.add('hidden-scroll')
 });
 btn_pop_up_close.addEventListener('click', function() {
     pop_up_bg.classList.remove('active');
     pop_up.classList.remove('active');
+    html.classList.remove('hidden-scroll')
+
 });
 
 const to_do_list = document.querySelector("#to_do_list");
@@ -46,10 +49,12 @@ to_do_btn.addEventListener('click', function(e) {
 to_do_list.addEventListener('click', function(e) {
     pop_up_bg.classList.add('active');
     to_do.classList.add('active');
+    html.classList.add('hidden-scroll')
     showToDoList();
 })
 to_do_btn_close.addEventListener('click', function(e) {
     pop_up_bg.classList.remove('active');
+    html.classList.remove('hidden-scroll')
     to_do.classList.remove('active');
 })
 
